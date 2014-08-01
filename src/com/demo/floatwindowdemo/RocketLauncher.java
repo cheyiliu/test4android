@@ -26,7 +26,7 @@ public class RocketLauncher extends LinearLayout {
 
 	public RocketLauncher(Context context) {
 		super(context);
-		LayoutInflater.from(context).inflate(R.layout.launcher, this);
+		LayoutInflater.from(context).inflate(R.layout.test_windowmanager_float_window_launcher, this);
 		launcherImg = (ImageView) findViewById(R.id.launcher_img);
 		width = launcherImg.getLayoutParams().width;
 		height = launcherImg.getLayoutParams().height;

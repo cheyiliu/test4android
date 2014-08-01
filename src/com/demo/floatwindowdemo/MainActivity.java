@@ -13,7 +13,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.test_windowmanager_float_window_activity_main);
 		Button startFloatWindow = (Button) findViewById(R.id.start_float_window);
 		startFloatWindow.setOnClickListener(new OnClickListener() {
 			@Override

@@ -23,7 +23,7 @@ public class FloatWindowBigView extends LinearLayout {
 
 	public FloatWindowBigView(final Context context) {
 		super(context);
-		LayoutInflater.from(context).inflate(R.layout.float_window_big, this);
+		LayoutInflater.from(context).inflate(R.layout.test_windowmanager_float_window_float_window_big, this);
 		View view = findViewById(R.id.big_window_layout);
 		viewWidth = view.getLayoutParams().width;
 		viewHeight = view.getLayoutParams().height;

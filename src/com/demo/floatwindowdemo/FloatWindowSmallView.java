@@ -100,7 +100,7 @@ public class FloatWindowSmallView extends LinearLayout {
 		super(context);
 		windowManager = (WindowManager) context
 				.getSystemService(Context.WINDOW_SERVICE);
-		LayoutInflater.from(context).inflate(R.layout.float_window_small, this);
+		LayoutInflater.from(context).inflate(R.layout.test_windowmanager_float_window_float_window_small, this);
 		smallWindowLayout = (LinearLayout) findViewById(R.id.small_window_layout);
 		windowViewWidth = smallWindowLayout.getLayoutParams().width;
 		windowViewHeight = smallWindowLayout.getLayoutParams().height;
