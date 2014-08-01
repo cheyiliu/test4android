@@ -15,4 +15,7 @@
     <string name="plus_video_chat">视频聊天</string>
     <string name="plus_scan">扫一扫</string>
     <string name="plus_take_photo">拍照分享</string>
+    <string name="sticky_item">Sticky</string>
+    <string name="quick_return_item">Quick Return</string>
+
 </resources>
