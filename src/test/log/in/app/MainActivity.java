@@ -34,7 +34,8 @@ public class MainActivity extends Activity {
                 try {
                     mLogcatProc = Runtime.getRuntime().exec(new String[] {
                             // "logcat", "WindowManager:I *:S"
-                            "logcat", ""
+                            // "logcat", ""
+                            "logcat", "-v", "time", "-d"
                     });
                     reader = new BufferedReader(new InputStreamReader(mLogcatProc.getInputStream()));
                     File tmp = new File(getCacheDir() + File.separator
@@ -52,8 +53,10 @@ public class MainActivity extends Activity {
                             break;
                         }
                         line = reader.readLine();
-                        writer.newLine();
-                        writer.write(line);
+                        if (line != null) {
+                            writer.newLine();
+                            writer.write(line);
+                        }
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
