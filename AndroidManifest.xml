@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -72,6 +73,15 @@
         <activity
             android:name="test.disklrucache.MainActivity"
             android:label="Disk lru cache" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="test.log.in.app.MainActivity"
+            android:label="Logcat in app, Runtime.getRuntime().exec" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
