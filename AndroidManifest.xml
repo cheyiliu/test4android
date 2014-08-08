@@ -31,7 +31,7 @@
         </activity>
         <activity
             android:name="test.com.romainpiel.shimmer.MainActivity"
-            android:label="Matrix, Shader, Shimmer" >
+            android:label="view, Matrix, Shader, Shimmer" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,7 +40,7 @@
         </activity>
         <activity
             android:name="com.demo.floatwindowdemo.MainActivity"
-            android:label="WindowManager, float window on launcher, 360-like, rocket " >
+            android:label="view, WindowManager, float window on launcher, 360-like, rocket " >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -54,7 +54,7 @@
         <activity
             android:name="com.example.wechatsample.MainActivity"
             android:icon="@drawable/logo"
-            android:label="ActionBar, ViewPager, 微信ui" >
+            android:label="view, ActionBar, ViewPager, 微信ui" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -63,7 +63,7 @@
         </activity>
         <activity
             android:name="com.example.android.scrolltricks.MainActivity"
-            android:label="Scroll, sticky, quick return. Sticky：类似的同步滚动，特定的View最多滑动到顶部并保持固定不动。例如大众点评或美团的“立即购买”功能。Quick Return:向上滑动时，View也向上滑动并且消失，当向下滑动时，View马上出现。例如Google Now的搜索功能。" >
+            android:label="view, Scroll, sticky, quick return. Sticky：类似的同步滚动，特定的View最多滑动到顶部并保持固定不动。例如大众点评或美团的“立即购买”功能。Quick Return:向上滑动时，View也向上滑动并且消失，当向下滑动时，View马上出现。例如Google Now的搜索功能。" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -72,7 +72,7 @@
         </activity>
         <activity
             android:name="test.disklrucache.MainActivity"
-            android:label="Disk lru cache" >
+            android:label="util, Disk lru cache" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -81,7 +81,16 @@
         </activity>
         <activity
             android:name="test.log.in.app.MainActivity"
-            android:label="Logcat in app, Runtime.getRuntime().exec" >
+            android:label="util, Logcat in app, Runtime.getRuntime().exec" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="test.is.launcher.MainActivity"
+            android:label="util, ActivityManager.getRunningTasks， PackageManager.queryIntentActivities， 判断当前应用是否是launcher， see log for output" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
