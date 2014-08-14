@@ -11,6 +11,10 @@ import android.view.View.OnFocusChangeListener;
 
 import com.test4android.R;
 
+/***
+ * @author housy
+ */
+// TODO 阴影 + 白边； 控件化代码
 public class MainActivity extends Activity implements OnFocusChangeListener {
 
     AnimatorSet mAnimatorSetZoomIn;
