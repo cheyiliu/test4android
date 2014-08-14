@@ -71,6 +71,16 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="pptv.shuangtu.demo.MainActivity"
+            android:label="view, Demo for PPTV 双图动画"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="test.disklrucache.MainActivity"
             android:label="util, Disk lru cache" >
             <intent-filter>

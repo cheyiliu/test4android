@@ -1,0 +1,84 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pptv_tv_background" >
+
+    <RelativeLayout
+        android:id="@+id/whole_container"
+        android:layout_width="470dp"
+        android:layout_height="267dp"
+        android:layout_marginLeft="381dp"
+        android:layout_marginTop="103dp" >
+
+        <RelativeLayout
+            android:id="@+id/bg_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp" >
+
+            <ImageView
+                android:id="@+id/bg_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/pptv_shuangtu_bg" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/outter_container"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true" >
+
+            <ImageView
+                android:id="@+id/outter_image"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:adjustViewBounds="true"
+                android:scaleType="fitEnd"
+                android:src="@drawable/pptv_shuangtu_header1" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/inner_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp" >
+
+            <ImageView
+                android:id="@+id/inner_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/pptv_shuangtu_inner1" />
+
+            <RelativeLayout
+                android:id="@+id/inner_txt_container"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/bg_gradient_dark" >
+
+                <TextView
+                    android:id="@+id/inner_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="同桌的你"
+                    android:textColor="#FFFFFF"
+                    android:textSize="36sp" >
+                </TextView>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</FrameLayout>
