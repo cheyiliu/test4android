@@ -9,7 +9,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnFocusChangeListener;
-import android.view.animation.LinearInterpolator;
+import android.view.animation.AccelerateDecelerateInterpolator;
 
 import com.test4android.R;
 
@@ -70,10 +70,11 @@ public class MainActivity extends Activity implements OnFocusChangeListener {
             scale_container_Y.setDuration(0);
 
             AnimatorSet animatSet_move_inner_outter = new AnimatorSet();
-            animatSet_move_inner_outter.setInterpolator(new LinearInterpolator());
+            animatSet_move_inner_outter.setInterpolator(new AccelerateDecelerateInterpolator());
             animatSet_move_inner_outter.play(trans_outter_X).with(trans_inner_Y);
 
             AnimatorSet animatSet_scale_container = new AnimatorSet();
+            animatSet_scale_container.setInterpolator(new AccelerateDecelerateInterpolator());
             animatSet_scale_container.play(scale_container_X).with(scale_container_Y);
             animatSet_scale_container.addListener(new AnimatorListener() {
 
