@@ -72,7 +72,7 @@
         </activity>
         <activity
             android:name="pptv.shuangtu.demo.MainActivity"
-            android:label="view, Demo for PPTV 双图动画"
+            android:label="view, Demo for PPTV 双图动画, for TV"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
