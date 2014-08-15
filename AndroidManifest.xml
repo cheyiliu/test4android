@@ -82,7 +82,16 @@
         </activity>
         <activity
             android:name="test.disklrucache.MainActivity"
-            android:label="util, Disk lru cache" >
+            android:label="Disk lru cache, util usage" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.photoswalldemo.MainActivity"
+            android:label="Disk lru cache, girdView, photo wall" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
