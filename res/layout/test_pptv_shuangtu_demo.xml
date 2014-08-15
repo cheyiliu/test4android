@@ -43,7 +43,7 @@
                 android:adjustViewBounds="true"
                 android:focusable="false"
                 android:scaleType="fitXY"
-                android:src="@drawable/pptv_shuangtu_header" />
+                android:src="@drawable/pptv_shuangtu_header2" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -61,7 +61,7 @@
                 android:layout_marginRight="50dp"
                 android:layout_marginTop="50dp"
                 android:focusable="false"
-                android:src="@drawable/pptv_shuangtu_inner" />
+                android:src="@drawable/pptv_shuangtu_inner2" />
 
             <RelativeLayout
                 android:id="@+id/inner_txt_container"
@@ -130,7 +130,7 @@
                 android:adjustViewBounds="true"
                 android:focusable="false"
                 android:scaleType="fitXY"
-                android:src="@drawable/pptv_shuangtu_header1" />
+                android:src="@drawable/pptv_shuangtu_header3" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -148,7 +148,7 @@
                 android:layout_marginRight="50dp"
                 android:layout_marginTop="50dp"
                 android:focusable="false"
-                android:src="@drawable/pptv_shuangtu_inner1" />
+                android:src="@drawable/pptv_shuangtu_inner3" />
 
             <RelativeLayout
                 android:id="@+id/inner_txt_container"
