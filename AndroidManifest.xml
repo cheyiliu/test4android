@@ -81,8 +81,31 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="com.example.animtest.MainActivity"
+            android:label="view, 动画， ValueAnimator， ObjectAnimator， LayoutTransition" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.animtest.AnimateLayoutChanges" >
+        </activity>
+        <activity android:name="com.example.animtest.AnimateFreeFall" >
+        </activity>
+        <activity android:name="com.example.animtest.AnimateMoveInSecond" >
+        </activity>
+        <activity android:name="com.example.animtest.AnimateMultiple" >
+        </activity>
+        <activity android:name="com.example.animtest.AnimateLayoutTransition" >
+        </activity>
+        <activity android:name="com.example.animtest.AnimateLayoutAnimation" >
+        </activity>
+        <activity android:name="com.example.animtest.AnimateRotationLayout" >
+        </activity>
+        <activity
             android:name="test.disklrucache.MainActivity"
-            android:label="Disk lru cache, util usage" >
+            android:label="util, Disk lru cache, util usage" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -91,7 +114,7 @@
         </activity>
         <activity
             android:name="com.example.photoswalldemo.MainActivity"
-            android:label="Disk lru cache, girdView, photo wall" >
+            android:label="util, Disk lru cache, girdView, photo wall" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
