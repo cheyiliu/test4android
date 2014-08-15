@@ -12,6 +12,9 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+/**
+ * from http://blog.csdn.net/eclipsexys/article/details/38401641
+ */
 public class MainActivity extends Activity {
 
     private ListView listView;
