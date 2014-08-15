@@ -184,4 +184,13 @@
         android:layout_height="wrap_content"
         android:text="another view may has focus" />
 
+    <ImageView
+        android:id="@+id/global_focus_shadow"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:focusable="false"
+        android:scaleType="fitXY"
+        android:src="@drawable/pptv_global_focus_shadow"
+        android:visibility="invisible" />
+
 </FrameLayout>
