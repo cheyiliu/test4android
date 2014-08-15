@@ -113,6 +113,16 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="com.example.powerimageviewtest.MainActivity"
+            android:hardwareAccelerated="false"
+            android:label="view, gif, self defined imageview, API android.graphics.Movie" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="com.example.photoswalldemo.MainActivity"
             android:label="util, Disk lru cache, girdView, photo wall" >
             <intent-filter>
