@@ -124,7 +124,17 @@
         </activity>
         <activity
             android:name="com.example.renrenslidemenudemo.MainActivity"
-            android:label="view, simple slide menu, VelocityTracker"
+            android:label="view, slide menu, VelocityTracker"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.bidirslidinglayout.MainActivity"
+            android:label="view, slide menu, 左右菜单, VelocityTracker"
             android:theme="@android:style/Theme.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
