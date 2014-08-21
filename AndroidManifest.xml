@@ -133,6 +133,33 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="test.view.selfdefined.counter.MainActivity"
+            android:label="view, 自定义view, 自绘控件" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="test.view.selfdefined.compose.MainActivity"
+            android:label="view, 自定义view, 组合控件" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="test.view.selfdefined.extend.MainActivity"
+            android:label="view, 自定义view, 继承控件" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="com.example.bidirslidinglayout.MainActivity"
             android:label="view, slide menu, 左右菜单, VelocityTracker"
             android:theme="@android:style/Theme.NoTitleBar" >
