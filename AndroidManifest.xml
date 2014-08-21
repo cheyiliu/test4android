@@ -104,15 +104,6 @@
         <activity android:name="com.example.animtest.AnimateRotationLayout" >
         </activity>
         <activity
-            android:name="test.disklrucache.MainActivity"
-            android:label="util, Disk lru cache, util usage" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.SAMPLE_CODE" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name="com.example.powerimageviewtest.MainActivity"
             android:hardwareAccelerated="false"
             android:label="view, gif, self defined imageview, API android.graphics.Movie" >
@@ -160,9 +151,27 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="test.marqueeText.MainActivity"
+            android:label="view, TextView 走马灯， 两种方式， setSelected 更好， 可继续封装" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="com.example.bidirslidinglayout.MainActivity"
             android:label="view, slide menu, 左右菜单, VelocityTracker"
             android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="test.disklrucache.MainActivity"
+            android:label="util, Disk lru cache, util usage" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
