@@ -1,5 +1,5 @@
 
-package test.view.selfdefined.counter;
+package test.view.selfdefined.selfdraw;
 
 import android.content.Context;
 import android.graphics.Canvas;

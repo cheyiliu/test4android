@@ -1,4 +1,4 @@
-package test.view.selfdefined.counter;
+package test.view.selfdefined.selfdraw;
 
 import com.test4android.R;
 
