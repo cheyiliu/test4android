@@ -17,7 +17,7 @@ import android.widget.ImageView.ScaleType;
 import com.test4android.R;
 
 public class MainActivity extends Activity {
-    private static int ROWS = 5;// TODO to test, change this value
+    private static int ROWS = 3;// TODO to test, change this value
     ArrayList<ItemInfo> mItemInfos = new ArrayList<ItemInfo>();
     AnimatorSet mAnimatorSetZoomIn;
     AnimatorSet mAnimatorSetZoomOut;

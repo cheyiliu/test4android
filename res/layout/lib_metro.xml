@@ -35,7 +35,7 @@
         android:layout_height="500dp"
         android:focusable="false"
         android:scaleType="fitXY"
-        android:src="@drawable/shadow3"
+        android:src="@drawable/pptv_global_focus_shadow"
         android:visibility="invisible" />
 
 </merge>

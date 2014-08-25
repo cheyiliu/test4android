@@ -18,7 +18,7 @@ public class AnimationProvider {
     private static String TAG = "AnimationProvider";
     private long DURATION = 100;
     private float SCALE_RATIO = 1.1f;
-    private int ShadowBiggerThanRealFocusInPixel = 60;
+    private int ShadowBiggerThanRealFocusInPixel = 50;
 
     private float mPreScaleX = 1f;
     private float mPreScaleY = 1f;
