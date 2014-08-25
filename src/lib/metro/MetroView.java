@@ -18,6 +18,7 @@ public class MetroView extends RelativeLayout {
     private ImageView mImageViewBorder;
     private ImageView mImageViewShadow;
     private ImageView mImageViewCenter;
+    private AnimationProvider mAnimationProvider = new AnimationProvider();
 
     public MetroView(Context context) {
         this(context, null, 0);
@@ -72,7 +73,7 @@ public class MetroView extends RelativeLayout {
 
                 @Override
                 public void onFocusChange(View v, boolean hasFocus) {
-                    AnimationProvider.applyAnimation(hasFocus, v, mImageViewCenter,
+                    mAnimationProvider.applyAnimation(hasFocus, v, mImageViewCenter,
                             mImageViewBorder, mImageViewShadow);
                 }
             });

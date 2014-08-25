@@ -16,22 +16,19 @@ import android.widget.RelativeLayout;
 
 public class AnimationProvider {
     private static String TAG = "AnimationProvider";
-    private static long DURATION = 10000;
-    private static float SCALE_RATIO = 1.1f;
-    private static int ShadowBiggerThanRealFocusInPixel = 60;
+    private long DURATION = 100;
+    private float SCALE_RATIO = 1.1f;
+    private int ShadowBiggerThanRealFocusInPixel = 60;
 
-    private static float mPreScaleX = 1f;
-    private static float mPreScaleY = 1f;
+    private float mPreScaleX = 1f;
+    private float mPreScaleY = 1f;
 
-    public static void applyAnimation(final boolean hasFocus,
-            final View realFocusView, final ImageView globalFocusView,
-            final ImageView globalFloatView, final ImageView globalShadowView) {
+    public void applyAnimation(final boolean hasFocus,
+            final View realFocusView, final ImageView focusCenter,
+            final ImageView focusBorder, final ImageView focusShadow) {
         if (hasFocus) {
-            globalShadowView.setVisibility(View.INVISIBLE);
-            globalFocusView.setVisibility(View.INVISIBLE);// TODO to test, do
-                                                          // NOT invisible
-                                                          // will cause
-                                                          // problem, but WHY?
+            focusShadow.setVisibility(View.INVISIBLE);
+            focusCenter.setVisibility(View.INVISIBLE);
 
             /**
              * 1. move and scale the globalFocusView (visible when animation is
@@ -42,79 +39,79 @@ public class AnimationProvider {
             final ViewGroup realFocusParent = (ViewGroup) realFocusView.getParent();
             int x = (realFocusView.getLeft() + getLeft(realFocusParent));
 
-            final int globalFocusTargetX = x;
-            final int globalFocusTargetY = realFocusView.getTop() + getTop(realFocusParent);
-            final int globalFloatTargetX = (int) (globalFocusTargetX - realFocusView.getWidth()
+            final int focusCenterTargetX = x;
+            final int focusCenterTargetY = realFocusView.getTop() + getTop(realFocusParent);
+            final int focusBorderTargetX = (int) (focusCenterTargetX - realFocusView.getWidth()
                     * (SCALE_RATIO - 1) / 2);
-            final int globalFloatTargetY = (int) (globalFocusTargetY - realFocusView.getHeight()
+            final int focusBorderTargetY = (int) (focusCenterTargetY - realFocusView.getHeight()
                     * (SCALE_RATIO - 1) / 2);
-            final int globalShadowTargetX = globalFloatTargetX - ShadowBiggerThanRealFocusInPixel
+            final int focusShadowTargetX = focusBorderTargetX - ShadowBiggerThanRealFocusInPixel
                     / 2;
-            final int globalShadowTargetY = globalFloatTargetY - ShadowBiggerThanRealFocusInPixel
+            final int focusShadowTargetY = focusBorderTargetY - ShadowBiggerThanRealFocusInPixel
                     / 2;
-            Log.i(TAG, "globalFocusTargetX=" + globalFocusTargetX);
-            Log.i(TAG, "globalFocusTargetY=" + globalFocusTargetY);
-            Log.i(TAG, "globalFloatTargetX=" + globalFloatTargetX);
-            Log.i(TAG, "globalFloatTargetY=" + globalFloatTargetY);
-            Log.i(TAG, "globalShadowTargetX=" + globalShadowTargetX);
-            Log.i(TAG, "globalShadowTargetY=" + globalShadowTargetY);
+            Log.i(TAG, "globalFocusTargetX=" + focusCenterTargetX);
+            Log.i(TAG, "globalFocusTargetY=" + focusCenterTargetY);
+            Log.i(TAG, "globalFloatTargetX=" + focusBorderTargetX);
+            Log.i(TAG, "globalFloatTargetY=" + focusBorderTargetY);
+            Log.i(TAG, "globalShadowTargetX=" + focusShadowTargetX);
+            Log.i(TAG, "globalShadowTargetY=" + focusShadowTargetY);
 
             /**
-             * 1. move and scale the globalFocusView (visible when animation is
-             * done )
+             * 1. move and scale the focusCenter (visible when animation is done
+             * )
              */
-            RelativeLayout.LayoutParams globalFocusLayout = new RelativeLayout.LayoutParams(
+            RelativeLayout.LayoutParams focusCenterLayout = new RelativeLayout.LayoutParams(
                     realFocusView.getWidth(), realFocusView.getHeight());
-            globalFocusLayout.leftMargin = globalFocusTargetX;
-            globalFocusLayout.topMargin = globalFocusTargetY;
+            focusCenterLayout.leftMargin = focusCenterTargetX;
+            focusCenterLayout.topMargin = focusCenterTargetY;
 
-            globalFocusView.setLayoutParams(globalFocusLayout);
-            globalFocusView.setVisibility(View.VISIBLE);
-            globalFocusView.bringToFront();
-            globalFocusView.setImageBitmap(convertViewToBitmap(realFocusView));
-            ObjectAnimator scale_globalFocusView_X = ObjectAnimator.ofFloat(globalFocusView,
+            focusCenter.setLayoutParams(focusCenterLayout);
+            focusCenter.setVisibility(View.VISIBLE);
+            focusCenter.bringToFront();
+            focusCenter.setImageBitmap(convertViewToBitmap(realFocusView));
+            ObjectAnimator scale_focusCenterView_X = ObjectAnimator.ofFloat(focusCenter,
                     "scaleX", 1.0f, SCALE_RATIO);
-            ObjectAnimator scale_globalFocusView_Y = ObjectAnimator.ofFloat(globalFocusView,
+            ObjectAnimator scale_focusCenterView_Y = ObjectAnimator.ofFloat(focusCenter,
                     "scaleY", 1.0f, SCALE_RATIO);
-            AnimatorSet scale_globalFocusView = new AnimatorSet();
-            scale_globalFocusView.setInterpolator(new AccelerateInterpolator());
-            scale_globalFocusView.play(scale_globalFocusView_X).with(scale_globalFocusView_Y);
-            scale_globalFocusView.setDuration(DURATION);
-            scale_globalFocusView.start();
+            AnimatorSet scale_focusCenterView = new AnimatorSet();
+            scale_focusCenterView.setInterpolator(new AccelerateInterpolator());
+            scale_focusCenterView.play(scale_focusCenterView_X).with(scale_focusCenterView_Y);
+            scale_focusCenterView.setDuration(DURATION);
+            scale_focusCenterView.start();
 
             /**
-             * 2. move and scale the globalFloatView (visible during animation )
+             * 2. move and scale the focusBorder (visible during animation )
              */
-            globalFloatView.setVisibility(View.VISIBLE);
-            globalFloatView.bringToFront();
-            globalFloatView.setPivotX(0);
-            globalFloatView.setPivotY(0);
+            focusBorder.setVisibility(View.VISIBLE);
+            focusBorder.bringToFront();
+            focusBorder.setPivotX(0);
+            focusBorder.setPivotY(0);
 
-            float globalFloatPreX = globalFloatView.getX();
-            float globalFloatPreY = globalFloatView.getY();
-            float scale_globalFloatView_X_ratio = realFocusView.getWidth() * SCALE_RATIO
-                    / globalFloatView.getWidth();
-            float scale_globalFloatView_Y_ratio = realFocusView.getHeight() * SCALE_RATIO
-                    / globalFloatView.getHeight();
-            ObjectAnimator trans_globalFloatView_X = ObjectAnimator.ofFloat(globalFloatView, "x",
-                    globalFloatPreX, globalFloatTargetX);
-            ObjectAnimator trans_globalFloatView_Y = ObjectAnimator.ofFloat(globalFloatView, "y",
-                    globalFloatPreY, globalFloatTargetY);
-            ObjectAnimator scale_globalFloatView_X = ObjectAnimator.ofFloat(globalFloatView,
-                    "scaleX", mPreScaleX, scale_globalFloatView_X_ratio);
-            ObjectAnimator scale_globalFloatView_Y = ObjectAnimator.ofFloat(globalFloatView,
-                    "scaleY", mPreScaleY, scale_globalFloatView_Y_ratio);
+            float focusBorderPreX = focusBorder.getX();
+            float focusBorderPreY = focusBorder.getY();
+            float scale_focusBorderView_X_ratio = realFocusView.getWidth() * SCALE_RATIO
+                    / focusBorder.getWidth();
+            float scale_focusBorderView_Y_ratio = realFocusView.getHeight() * SCALE_RATIO
+                    / focusBorder.getHeight();
+            ObjectAnimator trans_focusBorderView_X = ObjectAnimator.ofFloat(focusBorder, "x",
+                    focusBorderPreX, focusBorderTargetX);
+            ObjectAnimator trans_focusBorderView_Y = ObjectAnimator.ofFloat(focusBorder, "y",
+                    focusBorderPreY, focusBorderTargetY);
+            ObjectAnimator scale_focusBorderView_X = ObjectAnimator.ofFloat(focusBorder,
+                    "scaleX", mPreScaleX, scale_focusBorderView_X_ratio);
+            ObjectAnimator scale_focusBorderView_Y = ObjectAnimator.ofFloat(focusBorder,
+                    "scaleY", mPreScaleY, scale_focusBorderView_Y_ratio);
 
-            mPreScaleX = scale_globalFloatView_X_ratio;
-            mPreScaleY = scale_globalFloatView_Y_ratio;
+            mPreScaleX = scale_focusBorderView_X_ratio;
+            mPreScaleY = scale_focusBorderView_Y_ratio;
 
-            AnimatorSet scaleTransGLobalFloatView = new AnimatorSet();
-            scaleTransGLobalFloatView.setInterpolator(new AccelerateInterpolator());
-            scaleTransGLobalFloatView.play(trans_globalFloatView_X).with(trans_globalFloatView_Y)
-                    .with(scale_globalFloatView_X).with(scale_globalFloatView_Y);
-            scaleTransGLobalFloatView.setDuration(DURATION);
-            scaleTransGLobalFloatView.start();
-            scaleTransGLobalFloatView.addListener(new AnimatorListener() {
+            AnimatorSet scaleTransFocusBorderView = new AnimatorSet();
+            scaleTransFocusBorderView.setInterpolator(new AccelerateInterpolator());
+            scaleTransFocusBorderView.play(trans_focusBorderView_X).with(trans_focusBorderView_Y)
+                    .with(scale_focusBorderView_X).with(scale_focusBorderView_Y);
+            scaleTransFocusBorderView.setDuration(DURATION);
+            scaleTransFocusBorderView.start();
+            scaleTransFocusBorderView.addListener(new AnimatorListener() {
 
                 @Override
                 public void onAnimationStart(Animator animation) {
@@ -135,20 +132,20 @@ public class AnimationProvider {
                     int shadowHeight = (int) (realFocusView.getHeight() * SCALE_RATIO)
                             + ShadowBiggerThanRealFocusInPixel;
 
-                    RelativeLayout.LayoutParams globalShadowLayout = new RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams focusShadowayout = new RelativeLayout.LayoutParams(
                             shadowWith, shadowHeight);
-                    globalShadowLayout.leftMargin = globalShadowTargetX;
-                    globalShadowLayout.topMargin = globalShadowTargetY;
+                    focusShadowayout.leftMargin = focusShadowTargetX;
+                    focusShadowayout.topMargin = focusShadowTargetY;
 
-                    globalShadowView.setLayoutParams(globalShadowLayout);
-                    globalShadowView.setVisibility(View.VISIBLE);
+                    focusShadow.setLayoutParams(focusShadowayout);
+                    focusShadow.setVisibility(View.VISIBLE);
 
                     /**
                      * 4. keep the z order
                      */
-                    globalShadowView.bringToFront();
-                    globalFocusView.bringToFront();
-                    globalFloatView.bringToFront();
+                    focusShadow.bringToFront();
+                    focusCenter.bringToFront();
+                    focusBorder.bringToFront();
                 }
 
                 @Override
@@ -157,13 +154,13 @@ public class AnimationProvider {
             });
         } else {
             // just hide the three
-            globalFloatView.setVisibility(View.INVISIBLE);
-            globalShadowView.setVisibility(View.INVISIBLE);
-            globalFocusView.setVisibility(View.INVISIBLE);
+            focusBorder.setVisibility(View.INVISIBLE);
+            focusShadow.setVisibility(View.INVISIBLE);
+            focusCenter.setVisibility(View.INVISIBLE);
         }
     }
 
-    private static Bitmap convertViewToBitmap(View view) {
+    private Bitmap convertViewToBitmap(View view) {
         view.measure(MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED),
                 MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
         view.buildDrawingCache();
@@ -171,15 +168,15 @@ public class AnimationProvider {
         return bitmap;
     }
 
-    private static int getLeft(ViewGroup viewGroup) {
+    private int getLeft(ViewGroup viewGroup) {
         return 0;
     }
 
-    private static int getTop(ViewGroup viewGroup) {
+    private int getTop(ViewGroup viewGroup) {
         return 0;
     }
 
-    public static void reset() {
+    public void reset() {
         mPreScaleX = 1f;
         mPreScaleY = 1f;
     }
