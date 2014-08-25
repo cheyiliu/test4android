@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <GridLayout
+        android:id="@+id/grid_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingLeft="100dp"
+        android:paddingRight="100dp"
+        android:paddingTop="100dp" />
+
+    <ImageView
+        android:id="@+id/focus_border"
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:focusable="false"
+        android:scaleType="fitXY"
+        android:src="@drawable/tv_white_border"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/focus_center"
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:focusable="false"
+        android:scaleType="fitXY"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/focus_shadow"
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:focusable="false"
+        android:scaleType="fitXY"
+        android:src="@drawable/shadow3"
+        android:visibility="invisible" />
+
+</merge>
