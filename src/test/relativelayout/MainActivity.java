@@ -109,13 +109,24 @@ public class MainActivity extends Activity {
         mItemInfos.add(new ItemInfo(2, 2, 1, true, -1, 1, 1));
         mItemInfos.add(new ItemInfo(3, 1, 1, false, 1, -1, 2));
         mItemInfos.add(new ItemInfo(4, 1, 1, false, -1, 1, 3));
+
+        mItemInfos.add(new ItemInfo(5, 1, 1, true, -1, 1, 2));
+        mItemInfos.add(new ItemInfo(6, 1, 1, true, -1, 1, 5));
+        mItemInfos.add(new ItemInfo(7, 2, 1, false, 1, -1, 5));
+
+        mItemInfos.add(new ItemInfo(8, 2, 1, true, -1, 1, 6));
+        mItemInfos.add(new ItemInfo(9, 1, 1, false, 1, -1, 8));
+        mItemInfos.add(new ItemInfo(10, 1, 1, false, -1, 1, 9));
+
+        mItemInfos.add(new ItemInfo(11, 1, 1, true, -1, 1, 8));
+        mItemInfos.add(new ItemInfo(12, 1, 1, false, 1, -1, 11));
     }
 
     @SuppressLint("InlinedApi")
     public void addItem(ItemInfo itemInfo) {
-        int minWidth = 200;
-        int minHeight = 200;
-        int margin = 30;
+        int minWidth = 50;
+        int minHeight = 50;
+        int margin = 5;
         TextView tv = new TextView(this);
         if (itemInfo.isTop) {
             tv.setText(itemInfo.id + ", top");
