@@ -5,58 +5,31 @@ import java.util.ArrayList;
 
 import lib.metro.MetroAdapter;
 import lib.metro.MetroView;
-import android.app.Activity;
-import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.ImageView.ScaleType;
 
 import com.test4android.R;
 
-public class MainActivity extends Activity {
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.ImageView.ScaleType;
+
+public class FragmentMetro1 extends Fragment {
     private static int ROWS = 3;// TODO to test, change this value
     ArrayList<ItemInfo> mItemInfos = new ArrayList<ItemInfo>();
-    MetroView metroView;
-    MetroAdapter metroAdapter;
-
-    EditText mEditText;
-    Button mButton;
-    CheckBox mCheckBox;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.lib_metro_sample);
-        mEditText = (EditText) findViewById(R.id.editText1);
-        mButton = (Button) findViewById(R.id.button1);
-        mCheckBox = (CheckBox) findViewById(R.id.checkBox1);
-        mButton.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                try {
-                    String strNum = mEditText.getEditableText().toString();
-                    ROWS = Integer.parseInt(strNum);
-                } catch (Exception e) {
-                    // TODO: handle exception
-                }
-                generateMetroItems(mCheckBox.isChecked());
-                metroView.setAdapter(metroAdapter);
-            }
-        });
-
-        metroView = (MetroView) findViewById(R.id.metroView);
-        metroAdapter = new MetroAdapter() {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.lib_metro_sample2_fragment1, null);
+        generateMetroItems();
+        MetroView metroView = (MetroView) root.findViewById(R.id.metroView);
+        MetroAdapter metroAdapter = new MetroAdapter() {
 
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
-                ImageView image = new ImageView(getApplicationContext());
+                ImageView image = new ImageView(getActivity());
 
                 image.setScaleType(ScaleType.FIT_XY);
                 if (position % 2 == 0)
@@ -98,7 +71,7 @@ public class MainActivity extends Activity {
 
             @Override
             public int getMinHeight() {
-                return 100;
+                return 150;
             }
 
             @Override
@@ -111,24 +84,14 @@ public class MainActivity extends Activity {
                 return 5;
             }
         };
-
+        metroView.setAdapter(metroAdapter);
+        return root;
     }
 
-    private void generateMetroItems(boolean randomGen) {
+    private void generateMetroItems() {
         mItemInfos.clear();
-        if (randomGen) {
-            for (int i = 0; i < 50; i++) {
-                int width = (int) (Math.random() * ROWS);
-                int height = (int) (Math.random() * ROWS);
-                if (width <= 0) {
-                    width = 1;
-                }
-                if (height <= 0) {
-                    height = 1;
-                }
-                mItemInfos.add(new ItemInfo(width, height));
-            }
-        } else if (ROWS == 1) {
+
+        if (ROWS == 1) {
             mItemInfos.add(new ItemInfo(1, 1));
             mItemInfos.add(new ItemInfo(2, 1));
             mItemInfos.add(new ItemInfo(3, 1));
@@ -255,5 +218,4 @@ public class MainActivity extends Activity {
         }
 
     }
-
 }

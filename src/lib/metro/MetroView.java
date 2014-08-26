@@ -43,6 +43,7 @@ public class MetroView extends RelativeLayout {
     }
 
     private void updateUI() {
+        mGridLayout.removeAllViews();
         mGridLayout.setRowCount(mAdapter.getRowCount());
         mGridLayout.setOrientation(GridLayout.VERTICAL);
         int count = mAdapter.getCount();

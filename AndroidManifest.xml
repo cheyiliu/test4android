@@ -190,6 +190,16 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="lib.metro.sample.MainActivity2"
+            android:label="view, Metro, gridlayout, viewpager onkey event"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="test.disklrucache.MainActivity"
             android:label="util, Disk lru cache, util usage" >
             <intent-filter>
