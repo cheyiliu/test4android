@@ -5,6 +5,7 @@
     android:background="@drawable/pptv_tv_background" >
 
     <lib.metro.MetroView
+        android:layout_marginLeft="150dp"
         android:id="@+id/metroView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

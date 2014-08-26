@@ -71,7 +71,7 @@ public class FragmentMetro3 extends Fragment {
 
             @Override
             public int getMinHeight() {
-                return 500;
+                return 400;
             }
 
             @Override
