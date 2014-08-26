@@ -200,6 +200,16 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="test.relativelayout.MainActivity"
+            android:label="view, RelativeLayout, 动态添加View"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="test.disklrucache.MainActivity"
             android:label="util, Disk lru cache, util usage" >
             <intent-filter>
