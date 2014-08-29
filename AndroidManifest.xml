@@ -210,6 +210,16 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="lib.dpad.sample.MainActivity"
+            android:label="view, DPad, 手机遥控器dpad"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="test.disklrucache.MainActivity"
             android:label="util, Disk lru cache, util usage" >
             <intent-filter>

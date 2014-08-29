@@ -17,5 +17,10 @@
     <declare-styleable name="PowerImageView">
         <attr name="auto_play" format="boolean"></attr>
     </declare-styleable>
+    <declare-styleable name="RemoteDPad">
+        <attr name="bg" format="reference" />
+        <attr name="ok" format="reference" />
+        <attr name="circle" format="reference" />
+    </declare-styleable>
 
 </resources>
