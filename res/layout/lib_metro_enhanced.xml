@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/focus_border"
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:focusable="false"
+        android:scaleType="fitXY"
+        android:src="@drawable/tv_white_border"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/focus_shadow"
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:focusable="false"
+        android:scaleType="fitXY"
+        android:src="@drawable/shadow"
+        android:visibility="invisible" />
+
+</merge>

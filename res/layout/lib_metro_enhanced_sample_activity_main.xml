@@ -1,0 +1,16 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pptv_tv_background" >
+
+    <lib.metro.enhanced.MyHorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <lib.metro.enhanced.MetroView
+            android:id="@+id/metro_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </lib.metro.enhanced.MyHorizontalScrollView>
+
+</RelativeLayout>

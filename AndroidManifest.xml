@@ -182,7 +182,7 @@
         </activity>
         <activity
             android:name="lib.metro.sample.MainActivity"
-            android:label="view, Metro, gridlayout, onkey event"
+            android:label="view, Metro, gridlayout, onkey event, for TV"
             android:theme="@android:style/Theme.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -192,7 +192,17 @@
         </activity>
         <activity
             android:name="lib.metro.sample.MainActivity2"
-            android:label="view, Metro, gridlayout, viewpager onkey event"
+            android:label="view, Metro, gridlayout, viewpager, onkey event, for TV"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="lib.metro.enhanced.sample.MainActivity"
+            android:label="view, Metro, enhanded, 焦点图层有动画, for TV"
             android:theme="@android:style/Theme.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
