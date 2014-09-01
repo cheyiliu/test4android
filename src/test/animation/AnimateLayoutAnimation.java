@@ -1,4 +1,4 @@
-package com.example.animtest;
+package test.animation;
 
 import com.test4android.R;
 

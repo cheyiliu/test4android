@@ -82,7 +82,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.animtest.MainActivity"
+            android:name="test.animation.MainActivity"
             android:label="view, 动画， ValueAnimator， ObjectAnimator， LayoutTransition" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -90,19 +90,19 @@
                 <category android:name="android.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.animtest.AnimateLayoutChanges" >
+        <activity android:name="test.animation.AnimateLayoutChanges" >
         </activity>
-        <activity android:name="com.example.animtest.AnimateFreeFall" >
+        <activity android:name="test.animation.AnimateFreeFall" >
         </activity>
-        <activity android:name="com.example.animtest.AnimateMoveInSecond" >
+        <activity android:name="test.animation.AnimateMoveInSecond" >
         </activity>
-        <activity android:name="com.example.animtest.AnimateMultiple" >
+        <activity android:name="test.animation.AnimateMultiple" >
         </activity>
-        <activity android:name="com.example.animtest.AnimateLayoutTransition" >
+        <activity android:name="test.animation.AnimateLayoutTransition" >
         </activity>
-        <activity android:name="com.example.animtest.AnimateLayoutAnimation" >
+        <activity android:name="test.animation.AnimateLayoutAnimation" >
         </activity>
-        <activity android:name="com.example.animtest.AnimateRotationLayout" >
+        <activity android:name="test.animation.AnimateRotationLayout" >
         </activity>
         <activity
             android:name="com.example.powerimageviewtest.MainActivity"
