@@ -249,6 +249,16 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="com.jfeinstein.jazzyviewpager.MainActivity"
+            android:label="view, ViewPager, 各种切换效果, from github"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="test.disklrucache.MainActivity"
             android:label="util, Disk lru cache, util usage" >
             <intent-filter>

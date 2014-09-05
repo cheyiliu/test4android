@@ -5,5 +5,6 @@
     <color name="top_item">#a6c</color>
     <color name="bottom_item">#f44</color>
     <color name="bottom_item_alt">#c00</color>
+    <color name="holo_blue">#FF33E5B5</color>
 
 </resources>
