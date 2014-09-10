@@ -91,6 +91,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="test.animation.shake.MainActivity"
+            android:label="view, 动画， 抖动的文字" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="test.animation.in_out.Test"
             android:label="view, 动画， ViewFlipper, in out" >
             <intent-filter>
