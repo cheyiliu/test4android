@@ -21,7 +21,7 @@
         <attr name="reflectionColor" format="color" />
     </declare-styleable>
 
-        <style name="Item">
+    <style name="Item">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">300dp</item>
     </style>
@@ -48,4 +48,12 @@
     <style name="Item.Bottom.Alt">
         <item name="android:background">@color/bottom_item_alt</item>
     </style>
+
+    <declare-styleable name="ViewPager">
+        <attr name="orientation">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+    </declare-styleable>
+
 </resources>

@@ -259,6 +259,16 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="com.mojichina.demo.PropertyAnimActivity"
+            android:label="view, Demo for 墨迹天气引导动画, 各种动画， 可上下划动的ViewPager， from github"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="test.disklrucache.MainActivity"
             android:label="util, Disk lru cache, util usage" >
             <intent-filter>
