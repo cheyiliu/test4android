@@ -23,7 +23,7 @@ import java.util.Map;
  * register the new Activity with <category
  * android:name="android.intent.category.SAMPLE_CODE" /> and label
  */
-public class Test4Android extends ListActivity {
+public class MainActivity extends ListActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -114,7 +114,7 @@ public class Test4Android extends ListActivity {
 
     protected Intent browseIntent(String path) {
         Intent result = new Intent();
-        result.setClass(this, Test4Android.class);
+        result.setClass(this, MainActivity.class);
         result.putExtra("com.example.android.apis.Path", path);
         return result;
     }

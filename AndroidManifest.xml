@@ -16,13 +16,14 @@
         android:targetSdkVersion="17" />
 
     <application
+        android:name="com.test4android.Test4AndroidApp"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:logo="@drawable/logo"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.test4android.Test4Android"
+            android:name="com.test4android.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -343,6 +344,15 @@
         <activity
             android:name="test.mediaplayer.setnextplayer.MainActivity"
             android:label="mediaplayer, setnextmediaplayer" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="test.acra.MainActivity"
+            android:label="ACRA, from github, crash log reporter" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
