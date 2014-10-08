@@ -2,6 +2,7 @@ test4android
 ============
 
 
+* 20141008 add FileObserver test
 
 # Feature tested before 2014.10.01
 * ACRA, from github, crash log reporter
