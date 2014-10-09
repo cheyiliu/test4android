@@ -38,7 +38,7 @@ import static org.acra.ACRA.LOG_TAG;
  * @author Kevin Gaudin
  * 
  */
-class LogCatCollector {
+public class LogCatCollector {
 
     /**
      * Default number of latest lines kept from the logcat output.
