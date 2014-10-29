@@ -1,6 +1,6 @@
 test4android
 ============
-
+* 20141029 add webview test, load dynamic from a domain or local HTML
 * 20141009 add Android Contacts 全特效实现，字母表快速滚动, 分组导航和挤压动画
 * 20141008 add FileObserver test
 
